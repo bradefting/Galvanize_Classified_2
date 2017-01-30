@@ -13,6 +13,8 @@
         const vm = this;
 
         vm.$onInit = function(){
+          
+          console.log('working');
 
           $http.get('/classifieds').then(function(response){
           console.log(response);
