@@ -25,6 +25,15 @@
 
         }//end onInit
 
+        vm.createPost = function(){
+
+          $http.post('/classifieds', vm.post).then(function(response){
+            // console.log(response);
+            delete vm.post;
+          })
+
+        }//end new post
+
 
 
       }
