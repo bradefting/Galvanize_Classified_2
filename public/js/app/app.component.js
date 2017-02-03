@@ -12,14 +12,18 @@
       function appController($http){
         const vm = this;
 
+        vm.posts = [];
+
         vm.$onInit = function(){
-          
-          console.log('working');
 
           $http.get('/classifieds').then(function(response){
-          console.log(response);
+            console.log(response);
+            for(let i =0; i<response.data.length; i++){
+              vm.posts.push(response.data[i])
+            }
           });
-        }
+
+        }//end onInit
 
 
 
