@@ -6,13 +6,6 @@
   <h2>this is bar to sort, filter and new post</h2>
 </div>
 
-<div ng-repeat="post in $ctrl.posts">
-  <img ng-src="{{ post.item_image }}" alt="Description" />
-  <p>Title: {{ post.title }}</p>
-  <p>Price: {{ post.price }}</p>
-  <p>Description: {{ post.description }}</p>
-</div>
-
 <form ng-submit="$ctrl.createPost()">
   <!--title  -->
   <div>
@@ -36,7 +29,17 @@
   </div>
 
   <button type="submit">Create</button>
+  
 </form>
+<!--end of form -->
+
+<div ng-repeat="post in $ctrl.posts">
+  <img ng-src="{{ post.item_image }}" alt="Description" />
+  <p>Title: {{ post.title }}</p>
+  <p>Price: {{ post.price }}</p>
+  <p>Description: {{ post.description }}</p>
+</div>
+<!--end of items -->
 
 <div>
   <h2>this is footer</h2>

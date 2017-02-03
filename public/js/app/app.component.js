@@ -15,7 +15,7 @@
         vm.posts = [];
 
         vm.$onInit = function(){
-
+          vm.posts = []; //empty posts for page refresh
           $http.get('/classifieds').then(function(response){
             console.log(response);
             for(let i =0; i<response.data.length; i++){
@@ -26,13 +26,14 @@
         }//end onInit
 
         vm.createPost = function(){
-
           $http.post('/classifieds', vm.post).then(function(response){
             // console.log(response);
             delete vm.post;
+            vm.$onInit();
           })
-
         }//end new post
+
+        
 
 
 
