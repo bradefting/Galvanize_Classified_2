@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html ng-app="app">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,8 @@
 </head>
 <body>
 
-  <app></app>
+  <!-- <app></app> -->
+  <ui-view></ui-view>
 
   <!--angular  -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
@@ -18,11 +19,11 @@
   <script src="https://unpkg.com/angular-ui-router@1.0.0-beta.3/release/angular-ui-router.js"></script>
 
   <!--angular scripts -->
-  <script src="js/app/app.module.js" defer></script>
-  <script src="js/app/app.component.js" defer></script>
-  <script src="js/app/app.config.js" defer></script>
-  <!-- <script src="js/post/postList.component.js" defer></script> -->
-  <!-- <script src="/js/post/postEdit.component.js" defer></script> -->
+  <script src="/js/app/app.module.js" defer></script>
+  <script src="/js/app/app.component.js" defer></script>
+  <script src="/js/app/app.config.js" defer></script>
+  <script src="/js/item/itemList.component.js" defer></script>
+  <script src="/js/item/itemEdit.component.js" defer></script>
 
 </body>
 </html>

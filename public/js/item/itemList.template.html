@@ -1,0 +1,42 @@
+<div>
+   <h2>this is bar to sort items, filter and new item</h2>
+</div>
+
+<div>
+   <button type="submit" ng-click="$ctrl.openForm()">Create new item</button>
+</div>
+
+<form ng-if="$ctrl.newItemForm === true" ng-submit="$ctrl.createItem()" novalidate>
+
+   <div>
+       <label for="title">Title: </label>
+       <input type="text" placeholder="Title" name="title" ng-model="$ctrl.item.title" required>
+   </div>
+
+   <div>
+       <label for="price">Price: </label>
+       <input type="text" placeholder="Price" name="price" ng-model="$ctrl.item.price" required>
+   </div>
+
+   <div>
+       <label for="item_image">Item Image: </label>
+       <input type="text" placeholder="Image" name="item_image" ng-model="$ctrl.item.item_image" required>
+   </div>
+
+   <div>
+       <label for="description">Description: </label>
+       <textarea placeholder="Description" name="description" ng-model="$ctrl.item.description" required></textarea>
+   </div>
+
+   <button type="submit">Create</button>
+
+</form>
+
+<div ng-repeat="item in $ctrl.items">
+   <img ng-src="{{ item.item_image }}" alt="Description" />
+   <p>Title: {{ item.title }}</p>
+   <p>Price: ${{ item.price }}</p>
+   <p>Description: {{ item.description }}</p>
+   <button type="submit" ui-sref="edit({id: item.id})" name="edit">edit</button>
+
+</div>

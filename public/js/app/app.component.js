@@ -1,41 +1,15 @@
 (function() {
   'use strict';
 
-    angular.module('app')
-      .component('app', {
-        templateUrl: '/js/app/app.template.html',
-        controller: appController
-      });
+  angular.module('app')
+    .component('app', {
+      controller: appController,
+      templateUrl: 'js/app/app.template.html'
+    });
 
-      appController.$inject = ['$http'];
+    function appController(){
+      const vm = this;
 
-      function appController($http){
-        const vm = this;
+    }
 
-        vm.posts = [];
-
-        vm.$onInit = function(){
-          vm.posts = []; //empty posts for page refresh
-          $http.get('/classifieds').then(function(response){
-            console.log(response);
-            for(let i =0; i<response.data.length; i++){
-              vm.posts.push(response.data[i])
-            }
-          });
-
-        }//end onInit
-
-        vm.createPost = function(){
-          $http.post('/classifieds', vm.post).then(function(response){
-            // console.log(response);
-            delete vm.post;
-            vm.$onInit();
-          })
-        }//end new post
-
-        
-
-
-
-      }
 }());
