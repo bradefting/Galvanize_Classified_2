@@ -1,6 +1,8 @@
 <div>
    <h2>this is bar to sort items, filter and new item</h2>
+   Filter: <input type="search" placeholder="Filter items" ng-model="searchItem">
 </div>
+<br>
 
 <div>
    <button type="submit" ng-click="$ctrl.openForm()">Create new item</button>
@@ -32,7 +34,7 @@
 
 </form>
 
-<div ng-repeat="item in $ctrl.items">
+<div ng-repeat="item in $ctrl.items | filter:searchItem">
    <img ng-src="{{ item.item_image }}" alt="Description" />
    <p>Title: {{ item.title }}</p>
    <p>Price: ${{ item.price }}</p>
