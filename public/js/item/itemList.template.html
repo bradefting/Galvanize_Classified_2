@@ -1,7 +1,18 @@
+<hr>
+
 <div>
-   <h2>this is bar to sort items, filter and new item</h2>
    Filter: <input type="search" placeholder="Filter items" ng-model="searchItem">
 </div>
+
+<div>
+  <h4>Sort items by:</h4>
+  <button type="button" ng-click="sortType = 'created_at'">Post Date</button>
+  <button type="button" ng-click="sortType = 'price'">Low to high price</button>
+  <button type="button" ng-click="sortType = '-price'">High to low price</button>
+</div>
+
+<hr>
+
 <br>
 
 <div>
@@ -34,11 +45,14 @@
 
 </form>
 
-<div ng-repeat="item in $ctrl.items | filter:searchItem">
-   <img ng-src="{{ item.item_image }}" alt="Description" />
+<hr>
+
+<div ng-repeat="item in $ctrl.items | orderBy:sortType:sortReverse | filter:searchItem">
+   <img ng-src="{{ item.item_image }}" alt="Image of item for sale" />
    <p>Title: {{ item.title }}</p>
-   <p>Price: ${{ item.price }}</p>
+   <p>Price: ${{ item.price | number:2 }}</p>
    <p>Description: {{ item.description }}</p>
    <button type="submit" ui-sref="edit({id: item.id})" name="edit">edit</button>
+   <hr>
 
 </div>

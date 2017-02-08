@@ -3,13 +3,13 @@
 
  angular.module('app')
    .component('itemEdit', {
-     controller: editController,
-     templateUrl: 'js/item/itemEdit.template.html'
+     controller: itemEditController,
+     templateUrl: '/js/item/itemEdit.template.html'
    });
 
-   editController.$inject = ['$http', '$stateParams', '$state'];
+   itemEditController.$inject = ['$http', '$stateParams', '$state'];
 
-   function editController($http, $stateParams, $state){
+   function itemEditController($http, $stateParams, $state){
      const vm = this;
 
      vm.$onInit = $onInit;
@@ -26,7 +26,7 @@
      function editItem() {
        $http.patch(`/classifieds/${$stateParams.id}`, vm.item)
          .then((response) => {
-             $state.go('home');
+           $state.go('home');
          });
      }
 

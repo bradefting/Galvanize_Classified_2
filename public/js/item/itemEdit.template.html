@@ -20,9 +20,11 @@
    <textarea placeholder="Description" name="description" ng-model="$ctrl.item.description" required></textarea>
  </div>
 
- <button type="submit">Edit item</button>
+ <button type="submit">Save changes</button>
 
 </form>
 
-<button type="button" ng-click="$ctrl.deleteItem()">Delete item</button>
-<button type="button" ui-sref="home">Cancel edit</button>
+<div>
+  <button type="button" ng-click="$ctrl.deleteItem()">Delete item</button>
+  <button type="button" ui-sref="home">Cancel edits</button>
+</div>
